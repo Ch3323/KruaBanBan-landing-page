@@ -1,4 +1,4 @@
-import { BenefitsSection, FaqSection, FeatureSection, HowItWorksSection, LineIntegrationSection, ProblemSection, ProductFlowSection, SharedKitchenSection, TargetAudienceSection } from "@/components/landing/landing-sections";
+import { BenefitsSection, FaqSection, FeatureSection, HowItWorksSection, LineIntegrationSection, ProblemSection, ProductFlowSection, SharedKitchenSection, SubscriptionSection, TargetAudienceSection } from "@/components/landing/landing-sections";
 import { FinalCtaSection } from "@/components/landing/final-cta-section";
 import { HeroSection } from "@/components/landing/hero-section";
 import { LandingFooter } from "@/components/landing/landing-footer";
@@ -20,6 +20,7 @@ export default function Home() {
         <HowItWorksSection />
         <TargetAudienceSection />
         <BenefitsSection />
+        <SubscriptionSection appUrl={appUrl} />
         <FaqSection />
         <FinalCtaSection appUrl={appUrl} />
       </main>

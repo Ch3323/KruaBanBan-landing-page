@@ -1,5 +1,6 @@
 import { CheckCircle2, MessageCircle, Users } from "lucide-react";
 
+import { AppCta } from "@/components/landing/app-cta";
 import {
   audiences,
   benefits,
@@ -8,7 +9,9 @@ import {
   flowSteps,
   lineMessages,
   problemItems,
+  subscriptionPlans,
   type Feature,
+  type SubscriptionPlan,
 } from "@/components/landing/content";
 import { ProductPreview } from "@/components/landing/product-preview";
 import { SectionHeading } from "@/components/landing/section-heading";
@@ -19,7 +22,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
@@ -381,6 +384,92 @@ export function BenefitsSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+export function SubscriptionSection({ appUrl }: { appUrl: string }) {
+  return (
+    <section className="scroll-mt-24 bg-secondary/60 px-4 py-16 sm:px-6 lg:px-8" id="subscription">
+      <div className="mx-auto max-w-7xl">
+        <SectionHeading
+          badge="Subscription"
+          description="เลือกแพ็กเกจตามจังหวะของร้าน เริ่มจาก Free เพื่อจัดระบบพื้นฐาน แล้วอัปเกรดเมื่อทีมและข้อมูลเติบโตขึ้น"
+          title="3 แพ็กเกจตั้งแต่ Free ถึง Pro"
+        />
+        <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 items-stretch gap-5 md:grid-cols-3">
+          {subscriptionPlans.map((plan) => (
+            <SubscriptionCard appUrl={appUrl} key={plan.name} plan={plan} />
+          ))}
+        </div>
+        <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-6 text-muted-foreground">
+          ทุกแพ็กเกจออกแบบให้เหมาะกับร้านอาหารขนาดเล็ก และยังคงโฟกัสที่การจัดการหลังร้าน ไม่ใช่ระบบรับออเดอร์หรือรับชำระเงิน
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function SubscriptionCard({
+  appUrl,
+  plan,
+}: {
+  appUrl: string;
+  plan: SubscriptionPlan;
+}) {
+  return (
+    <Card
+      className={cn(
+        "h-full min-w-0 gap-0 rounded-lg bg-card py-0 shadow-none",
+        plan.highlighted && "ring-2 ring-primary shadow-lg"
+      )}
+    >
+      <CardHeader className="gap-0 px-6 pb-6 pt-6">
+        <div className="flex min-h-7 items-center justify-between gap-3">
+          <span className="text-sm font-medium text-muted-foreground">{plan.label}</span>
+          {plan.highlighted ? (
+            <Badge className="h-auto shrink-0 rounded-lg px-3 py-1">
+              แนะนำ
+            </Badge>
+          ) : null}
+        </div>
+        <CardTitle className="mt-5 text-2xl font-semibold">{plan.name}</CardTitle>
+        <div className="mt-6 flex min-h-16 items-end">
+          <span className={cn("font-semibold", plan.period ? "text-4xl leading-none" : "text-2xl leading-8")}>
+            {plan.price}
+          </span>
+          {plan.period ? (
+            <span className="ml-2 pb-1 text-sm text-muted-foreground">{plan.period}</span>
+          ) : null}
+        </div>
+        <p className="mt-5 min-h-18 text-sm leading-6 text-muted-foreground">{plan.description}</p>
+      </CardHeader>
+      <Separator />
+      <CardContent className="flex flex-1 flex-col justify-between px-6 pb-6 pt-6">
+        <div>
+          <p className="mb-4 text-sm font-semibold">สิ่งที่ได้รับ</p>
+          <ul className="grid gap-3 text-sm leading-6">
+            {plan.features.map((feature) => (
+              <li className="flex gap-2" key={feature}>
+                <CheckCircle2 aria-hidden className="mt-1 size-4 shrink-0 text-primary" />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="mt-8 w-full [&>div]:w-full [&>div>span]:w-full">
+          <AppCta
+            appUrl={appUrl}
+            className="h-11 w-full px-4 text-sm sm:w-full"
+            icon="arrow"
+            showDisabledNote={false}
+            size="lg"
+            variant={plan.highlighted ? "default" : "outline"}
+          >
+            {plan.name === "Free" ? "เริ่ม Free" : `ดูแผน ${plan.name}`}
+          </AppCta>
+        </div>
+      </CardContent>
+    </Card>
   );
 }
 

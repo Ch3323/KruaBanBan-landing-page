@@ -47,10 +47,21 @@ export type FaqItem = {
   answer: string;
 };
 
+export type SubscriptionPlan = {
+  name: string;
+  label: string;
+  price: string;
+  period?: string;
+  description: string;
+  features: string[];
+  highlighted?: boolean;
+};
+
 export const navItems: NavItem[] = [
   { href: "#features", label: "ฟีเจอร์" },
   { href: "#how-it-works", label: "วิธีใช้งาน" },
   { href: "#audience", label: "เหมาะกับใคร" },
+  { href: "#subscription", label: "แพ็กเกจ" },
   { href: "#faq", label: "คำถามที่พบบ่อย" },
 ];
 
@@ -219,6 +230,48 @@ export const benefits = [
   "ตั้งราคาขายจากต้นทุนจริง",
   "มองเห็นรายได้และกำไรได้เร็วขึ้น",
   "ทำงานร่วมกับสมาชิกในร้านได้ง่ายขึ้น",
+];
+
+export const subscriptionPlans: SubscriptionPlan[] = [
+  {
+    name: "Free",
+    label: "เริ่มต้นฟรี",
+    price: "฿0",
+    period: "/เดือน",
+    description: "สำหรับทดลองจัดระบบครัวส่วนตัว หรือร้านที่เพิ่งเริ่มเก็บข้อมูลหลังร้าน",
+    features: [
+      "จัดการวัตถุดิบพื้นฐาน",
+      "สร้างสูตรอาหารได้จำนวนจำกัด",
+      "บันทึกยอดขายรายวัน",
+      "ดูสรุปต้นทุนและกำไรเบื้องต้น",
+    ],
+  },
+  {
+    name: "Growth",
+    label: "ร้านเริ่มจริงจัง",
+    price: "ราคาเปิดตัวเร็ว ๆ นี้",
+    description: "สำหรับร้านเล็กที่ต้องการคุมต้นทุนและราคาขายให้เป็นระบบมากขึ้น",
+    highlighted: true,
+    features: [
+      "เพิ่มจำนวนวัตถุดิบและสูตรอาหาร",
+      "คำนวณราคา Margin และ GP",
+      "ดูประวัติยอดขายและกำไรย้อนหลัง",
+      "แจ้งเตือนวัตถุดิบใกล้หมดผ่าน LINE",
+      "แยกราคาหน้าร้านและเดลิเวอรี",
+    ],
+  },
+  {
+    name: "Pro",
+    label: "ทีมและข้อมูลเต็มรูปแบบ",
+    price: "ราคาเปิดตัวเร็ว ๆ นี้",
+    description: "สำหรับทีมที่ต้องการความยืดหยุ่น รายงานละเอียด และพื้นที่รองรับการเติบโต",
+    features: [
+      "พื้นที่จัดการหลายครัวหรือหลายสาขา",
+      "สิทธิ์สมาชิกและบทบาทการใช้งาน",
+      "รายงานช่วงวันที่แบบละเอียด",
+      "การดูแลและตั้งค่าระบบระดับทีม",
+    ],
+  },
 ];
 
 export const faqItems: FaqItem[] = [
