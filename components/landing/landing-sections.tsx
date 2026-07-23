@@ -13,7 +13,7 @@ import {
   type Feature,
   type SubscriptionPlan,
 } from "@/components/landing/content";
-import { ProductPreview } from "@/components/landing/product-preview";
+import { AppScreenshotPreview } from "@/components/landing/app-screenshot-preview";
 import { SectionHeading } from "@/components/landing/section-heading";
 import {
   Accordion,
@@ -22,8 +22,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 
@@ -134,115 +133,9 @@ function FeatureBlock({ feature, reverse }: { feature: Feature; reverse: boolean
 }
 
 function FeaturePreview({ type }: { type: Feature["preview"] }) {
-  if (type === "inventory") {
-    return <ProductPreview compact />;
-  }
-
-  if (type === "recipe") {
-    return (
-      <Card className="rounded-lg">
-        <CardHeader>
-          <CardTitle>ข้าวไก่ทอด</CardTitle>
-          <p className="text-sm text-muted-foreground">ตัวอย่างการคำนวณต้นทุนต่อจาน</p>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          <PreviewRow label="ต้นทุนวัตถุดิบ" value="฿28.40" />
-          <PreviewRow label="ต้นทุนพลังงาน" value="฿2.10" />
-          <Separator />
-          <PreviewRow emphasis label="ต้นทุนต่อจาน" value="฿30.50" />
-        </CardContent>
-      </Card>
-    );
-  }
-
-  if (type === "pricing") {
-    return (
-      <Card className="rounded-lg">
-        <CardHeader>
-          <CardTitle>ขายแล้วต้องเหลือกำไร</CardTitle>
-          <p className="text-sm text-muted-foreground">ไม่ใช่แค่เหลือยอดขาย</p>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          <PreviewRow label="ต้นทุนต่อจาน" value="฿30.50" />
-          <PreviewRow label="Margin" value="40%" />
-          <PreviewRow label="GP" value="30%" />
-          <Separator />
-          <PreviewRow emphasis label="ราคาหน้าร้าน" value="฿43" />
-          <PreviewRow emphasis label="ราคาเดลิเวอรี" value="฿62" />
-        </CardContent>
-      </Card>
-    );
-  }
-
-  if (type === "orders") {
-    return (
-      <Card className="rounded-lg">
-        <CardHeader>
-          <CardTitle>บันทึกยอดขายวันนี้</CardTitle>
-          <p className="text-sm text-muted-foreground">Demo UI สำหรับแสดงลำดับการลดสต็อก</p>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          <PreviewRow label="ข้าวไก่ทอด" value="3 จาน" />
-          <PreviewRow label="ช่องทาง" value="หน้าร้าน" />
-          <PreviewRow label="อกไก่ที่ใช้" value="-360 กรัม" />
-          <Separator />
-          <PreviewRow emphasis label="สต็อกถูกปรับตามสูตร" value="อัตโนมัติ" />
-        </CardContent>
-      </Card>
-    );
-  }
-
   return (
-    <Card className="rounded-lg">
-      <CardHeader>
-        <CardTitle>ภาพรวมช่วงเวลา</CardTitle>
-        <p className="text-sm text-muted-foreground">ตัวอย่างรายได้ ต้นทุน ค่า GP และกำไร</p>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        <div className="grid grid-cols-2 gap-3">
-          <SmallBox label="รายได้" tone="success" value="฿12,800" />
-          <SmallBox label="ต้นทุน" value="฿6,240" />
-          <SmallBox label="ค่า GP" value="฿1,420" />
-          <SmallBox label="กำไรประมาณการ" tone="success" value="฿4,760" />
-        </div>
-        <Progress aria-label="กำไรประมาณการเทียบกับรายได้" className="h-2" value={37} />
-      </CardContent>
-    </Card>
-  );
-}
-
-function PreviewRow({
-  emphasis,
-  label,
-  value,
-}: {
-  emphasis?: boolean;
-  label: string;
-  value: string;
-}) {
-  return (
-    <div className="flex items-center justify-between gap-4 text-sm">
-      <span className="text-muted-foreground">{label}</span>
-      <span className={cn("font-medium", emphasis && "text-foreground")}>{value}</span>
-    </div>
-  );
-}
-
-function SmallBox({
-  label,
-  tone,
-  value,
-}: {
-  label: string;
-  tone?: "success";
-  value: string;
-}) {
-  return (
-    <div className="rounded-lg border bg-background/70 p-3">
-      <div className="text-xs text-muted-foreground">{label}</div>
-      <div className={cn("mt-1 text-lg font-semibold", tone === "success" && "text-chart-2")}>
-        {value}
-      </div>
+    <div className="relative flex min-h-[32rem] items-center justify-center overflow-hidden rounded-[2rem] bg-muted/45 px-4 py-8">
+      <AppScreenshotPreview className="max-w-[18.75rem]" type={type} />
     </div>
   );
 }

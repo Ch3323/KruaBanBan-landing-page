@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, MessageCircle } from "lucide-react";
 
+import { AppScreenshotStack } from "@/components/landing/app-screenshot-preview";
 import { AppCta } from "@/components/landing/app-cta";
-import { ProductPreview } from "@/components/landing/product-preview";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
@@ -54,21 +54,28 @@ export function HeroSection({ appUrl }: HeroSectionProps) {
             ))}
           </div>
         </div>
-        <div className="relative z-10 space-y-4">
-          <div className="overflow-hidden rounded-lg border bg-card shadow-sm">
-            <Image
-              alt="เคาน์เตอร์ครัวขนาดเล็กพร้อมวัตถุดิบ สมุดคำนวณ และโทรศัพท์แสดงภาพรวมธุรกิจแบบไม่ระบุแบรนด์"
-              className="aspect-[16/10] w-full object-cover"
-              height={940}
-              priority
-              src="/krua-ban-ban-hero.png"
-              width={1680}
-            />
-          </div>
-          <ProductPreview />
+        <div className="relative z-10 space-y-5">
+          <AppScreenshotStack />
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <MessageCircle aria-hidden className="size-4 text-chart-2" />
-            CTA ใช้ URL จาก Environment Variable เท่านั้น
+            ออกแบบให้ใช้งานผ่าน LINE LIFF และร้านที่ขายหลายช่องทาง
+          </div>
+          <div className="flex flex-wrap items-center gap-3 rounded-3xl border bg-card px-4 py-3 shadow-sm">
+            {[
+              { alt: "GrabFood", src: "/imgs/grab-food-logo.png" },
+              { alt: "ShopeeFood", src: "/imgs/shopee-food-logo-sm.png" },
+              { alt: "LINE MAN", src: "/imgs/lineman-logo.png" },
+            ].map((logo) => (
+              <Image
+                alt={logo.alt}
+                className="size-9 rounded-full object-cover"
+                height={36}
+                key={logo.alt}
+                src={logo.src}
+                width={36}
+              />
+            ))}
+            <span className="text-sm font-medium">คำนวณราคาและ GP สำหรับเดลิเวอรี</span>
           </div>
         </div>
       </div>
