@@ -46,7 +46,7 @@ export function AppCta({
             <span className={cn("inline-flex", showDisabledNote ? "w-full sm:w-auto" : "w-auto")} tabIndex={0}>
               <Button
                 aria-describedby={showDisabledNote ? disabledNoteId : undefined}
-                className={cn("h-11 w-full px-5 text-base sm:w-auto", className)}
+                className={cn("h-11 w-full px-5 text-base sm:w-auto rounded-full", className)}
                 disabled
                 size={size}
                 variant={variant}

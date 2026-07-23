@@ -8,7 +8,7 @@ Primary evidence: `app/`, `components/`, `hooks/`, `lib/`, `prisma/schema.prisma
 
 ## Product overview
 
-Krua Ban Ban is a Thai-language, mobile-first kitchen operations web app designed to run with LINE LIFF. It helps a small food business manage ingredient stock, build recipes and costs, price menu items, record daily orders, review sales/profit history, and optionally share one kitchen data set among multiple LINE users (`hooks/use-liff.ts`; `app/(features)/management/page.tsx:295`).
+Langkrua is a Thai-language, mobile-first kitchen operations web app designed to run with LINE LIFF. It helps a small food business manage ingredient stock, build recipes and costs, price menu items, record daily orders, review sales/profit history, and optionally share one kitchen data set among multiple LINE users (`hooks/use-liff.ts`; `app/(features)/management/page.tsx:295`).
 
 The product is operational rather than consumer-facing: there is no customer ordering storefront, checkout, payment collection, or public menu in this codebase.
 
@@ -175,7 +175,7 @@ There is no persistent global tab bar/sidebar in the codebase. The only explicit
 
 ## Brand, visual system, and product tone
 
-- **Name:** “Krua Ban Ban” appears as the default workspace name; no formal wordmark or logo component is present (`app/(features)/management/page.tsx:110`).
+- **Name:** “Langkrua” appears as the default workspace name; no formal wordmark or logo component is present (`app/(features)/management/page.tsx:110`).
 - **Language/tone:** Thai-first, practical, friendly, and direct. Labels favor everyday kitchen/business language, examples, concise confirmations, and clear destructive warnings. Document language metadata is currently `lang="en"`, which conflicts with the Thai UI (`app/layout.tsx:27`).
 - **Typography:** Google Kanit at weights 100–900, applied globally (`app/layout.tsx`).
 - **Component system:** shadcn/ui `radix-nova`, Radix primitives, Lucide icons, Tailwind CSS v4, semantic CSS variables, and RSC mode (`components.json`).

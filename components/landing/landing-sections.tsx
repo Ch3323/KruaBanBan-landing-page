@@ -46,7 +46,7 @@ export function ProblemSection() {
           ))}
         </div>
         <p className="mx-auto mt-8 max-w-3xl text-center text-lg leading-8 text-muted-foreground">
-          Krua Ban Ban รวบรวมข้อมูลสำคัญของร้านไว้ในที่เดียว เพื่อให้คุณตัดสินใจจากตัวเลขจริงได้ง่ายขึ้น
+          Langkrua รวบรวมข้อมูลสำคัญของร้านไว้ในที่เดียว เพื่อให้คุณตัดสินใจจากตัวเลขจริงได้ง่ายขึ้น
         </p>
       </div>
     </section>
@@ -65,7 +65,7 @@ export function ProductFlowSection() {
               key={step.label}
             >
               <div className="mb-4 flex items-center justify-between">
-                <span className="grid size-9 place-items-center rounded-lg bg-primary text-sm font-semibold text-primary-foreground">
+                <span className="grid size-9 place-items-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
                   {index + 1}
                 </span>
                 <step.icon aria-hidden className="size-5 text-muted-foreground" />
@@ -350,7 +350,7 @@ export function TargetAudienceSection() {
   return (
     <section className="scroll-mt-24 px-4 py-16 sm:px-6 lg:px-8" id="audience">
       <div className="mx-auto max-w-7xl">
-        <SectionHeading title="Krua Ban Ban เหมาะกับใคร?" />
+        <SectionHeading title="Langkrua เหมาะกับใคร?" />
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {audiences.map((item) => (
             <Card className="rounded-lg" key={item.title}>

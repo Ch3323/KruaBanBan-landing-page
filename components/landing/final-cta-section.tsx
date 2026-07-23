@@ -18,7 +18,7 @@ export function FinalCtaSection({ appUrl }: FinalCtaSectionProps) {
               เริ่มจัดการครัวอย่างเป็นระบบ ตั้งแต่วันนี้
             </h2>
             <p className="text-pretty text-lg leading-8 text-muted-foreground">
-              ไม่ว่าคุณจะทำอาหารขายคนเดียว หรือดูแลร้านร่วมกับทีม Krua Ban Ban
+              ไม่ว่าคุณจะทำอาหารขายคนเดียว หรือดูแลร้านร่วมกับทีม Langkrua
               ช่วยให้คุณรู้วัตถุดิบ ต้นทุน ยอดขาย และกำไรได้จากที่เดียว
             </p>
             <p className="text-sm leading-6 text-muted-foreground">

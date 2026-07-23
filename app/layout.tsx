@@ -20,18 +20,18 @@ const siteDescription =
 
 export const metadata: Metadata = {
   metadataBase: siteUrl ? new URL(siteUrl) : undefined,
-  title: "Krua Ban Ban | จัดการสต็อก ต้นทุน และกำไรร้านอาหาร",
+  title: "Langkrua | จัดการสต็อก ต้นทุน และกำไรร้านอาหาร",
   description: siteDescription,
   alternates: siteUrl ? { canonical: "/" } : undefined,
   openGraph: {
-    title: "Krua Ban Ban | จัดการสต็อก ต้นทุน และกำไรร้านอาหาร",
+    title: "Langkrua | จัดการสต็อก ต้นทุน และกำไรร้านอาหาร",
     description: siteDescription,
     locale: "th_TH",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Krua Ban Ban | จัดการสต็อก ต้นทุน และกำไรร้านอาหาร",
+    title: "Langkrua | จัดการสต็อก ต้นทุน และกำไรร้านอาหาร",
     description: siteDescription,
   },
 };

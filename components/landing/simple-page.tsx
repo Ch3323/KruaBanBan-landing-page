@@ -15,7 +15,7 @@ export function SimplePage({ title, description }: SimplePageProps) {
           <Link href="/">กลับหน้าแรก</Link>
         </Button>
         <div className="rounded-lg border bg-card p-6 sm:p-8">
-          <p className="text-sm font-medium text-muted-foreground">Krua Ban Ban</p>
+          <p className="text-sm font-medium text-muted-foreground">Langkrua</p>
           <h1 className="mt-3 text-3xl font-semibold">{title}</h1>
           <p className="mt-4 leading-7 text-muted-foreground">{description}</p>
         </div>

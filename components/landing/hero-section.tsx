@@ -29,7 +29,7 @@ export function HeroSection({ appUrl }: HeroSectionProps) {
               <span className="sm:ml-3">ในทุกจาน</span>
             </h1>
             <p className="max-w-2xl text-pretty text-lg leading-8 text-muted-foreground">
-              Krua Ban Ban ช่วยให้ร้านอาหารขนาดเล็กจัดการวัตถุดิบ
+              Langkrua ช่วยให้ร้านอาหารขนาดเล็กจัดการวัตถุดิบ
               คำนวณต้นทุนสูตรอาหาร ตั้งราคาขาย บันทึกยอดขาย
               และดูรายได้กับกำไรได้ในที่เดียว
             </p>

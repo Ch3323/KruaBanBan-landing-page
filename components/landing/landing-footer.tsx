@@ -18,7 +18,7 @@ export function LandingFooter() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 md:grid-cols-[1fr_1.4fr]">
           <div>
-            <div className="text-lg font-semibold">Krua Ban Ban</div>
+            <div className="text-lg font-semibold">Langkrua</div>
             <p className="mt-2 max-w-sm text-sm leading-6 text-muted-foreground">
               เครื่องมือจัดการหลังร้านสำหรับธุรกิจอาหารขนาดเล็ก
             </p>
@@ -37,7 +37,7 @@ export function LandingFooter() {
         </div>
         <Separator className="my-8" />
         <p className="text-sm text-muted-foreground">
-          © {currentYear} Krua Ban Ban. All rights reserved.
+          © {currentYear} Langkrua. All rights reserved.
         </p>
       </div>
     </footer>
